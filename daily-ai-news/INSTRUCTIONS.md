@@ -30,9 +30,9 @@ Always keep a **benchmark leaders** strip (coding / science / computer-use).
    number that appears in only one source; mark unconfirmed items **"Unconfirmed."**
 
 2. **Digest.** Write `daily/<YYYY-MM-DD>/research.md`: top 6 ranked stories (each with
-   a category tag, one-line detail, source + date), a benchmark-leaders block, an
-   "also notable" list, and a Sources list. This is the single source of truth the
-   infographics draw from — do not invent facts not in it.
+   a category tag, one-line detail, a one-line **"why it matters"**, and source + date),
+   a benchmark-leaders block, an "also notable" list, and a Sources list. This is the
+   single source of truth the infographics draw from — do not invent facts not in it.
 
 3. **Build 3 variants** into `daily/<YYYY-MM-DD>/`, each a self-contained HTML file
    (inline CSS, no external assets, no network), `.canvas` = `1080×1350`:
@@ -44,13 +44,32 @@ Always keep a **benchmark leaders** strip (coding / science / computer-use).
    Category color map: Model = green, Product = indigo, Business = blue,
    Policy = amber, Safety = red. Always include the footer disclaimer:
    *"Compiled from AI-news trackers · verify before high-stakes use."*
-   Keep content dense enough to fill the full canvas height (no big empty band).
+   Keep content dense enough to fill the full canvas height (no big empty band). To
+   avoid sparse layouts, give each story a **"Why it matters"** line (from the digest):
+   in v2 it's a footer pinned to each card's bottom; in v3 it's a line under the hero.
+   v3's "also today" list should carry **8 items across 4 rows** to fill the lower third.
 
-4. **Render.** `node daily-ai-news/render.mjs daily/<YYYY-MM-DD>` → writes a PNG next
-   to each HTML at 1080×1350 (uses the preinstalled Chromium; installs nothing).
+4. **Render.** `npm i -D playwright` (once), then
+   `node daily-ai-news/render.mjs daily/<YYYY-MM-DD>` → writes a PNG next to each HTML
+   at 1080×1350. The renderer points Playwright at the preinstalled Chromium, so it
+   never downloads a browser (do NOT run `playwright install`).
 
-5. **Self-check.** Read each PNG back. Confirm: fills the canvas, no clipped text,
-   category colors consistent, numbers match `research.md`, disclaimer present.
+5. **Quality gate — iterate until it passes (do not stop early).** Read each rendered
+   PNG back with your vision and score it against ALL of these. If any fails, edit the
+   HTML, re-render, and re-check. Loop until all three variants pass every item:
+   - **Readable** — body copy is legible at a glance; strong text/background contrast.
+   - **No clipping/overflow** — nothing cut off at the canvas edges; no text spilling
+     out of its card/column; no awkward one-word last lines (orphans) in headlines.
+   - **Fills the canvas** — content spans the full 1080×1350; **no dead band and no
+     oversized internal gap** (roughly, no empty vertical space taller than ~80px).
+   - **Columns & alignment** — grid columns/cards line up; gutters are even; the footer
+     sits flush at the bottom.
+   - **Copy** — the key noun/number in each line is **bold**; body is ≤ 2 lines; no
+     typos; numbers match `research.md`; "Unconfirmed" items are labelled.
+   - **Consistency** — one palette per variant; category colors used consistently
+     (Model = green, Product = indigo, Business = blue, Policy = amber, Safety = red);
+     footer disclaimer present.
+   Only proceed once every variant clears every check.
 
 6. **Deliver.** Commit everything under `daily/<YYYY-MM-DD>/` and push to the branch
    `claude/ai-news-infographic-daily-4qd7gu`. Commit message:

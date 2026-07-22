@@ -39,12 +39,15 @@
   .hero h2 { font-size: 30px; font-weight: 850; color: var(--ink); line-height: 1.1; letter-spacing: -.6px; }
   .hero p { font-size: 15.5px; color: #334155; line-height: 1.44; margin-top: 8px; }
   .hero p b { color: var(--ink); }
+  .hero .why { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line);
+    font-size: 14.5px; color: var(--muted); font-weight: 600; }
+  .hero .why b { color: var(--model-ink); font-weight: 800; }
 
   /* Leaderboard */
   .board { margin: 0 44px; }
   .board .bh { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
   .board .row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-  .lb { border: 1.5px solid var(--line); border-radius: 12px; padding: 11px 15px; background: #fff; }
+  .lb { border: 1.5px solid var(--line); border-radius: 12px; padding: 17px 18px; background: #fff; }
   .lb .l { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
   .lb .v { font-size: 20px; font-weight: 850; color: var(--ink); margin-top: 2px; letter-spacing: -.4px; }
   .lb .n { font-size: 12.5px; color: var(--model); font-weight: 800; margin-top: 1px; }
@@ -54,7 +57,7 @@
   .more { margin: 0 44px; }
   .more .mh { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
   .more .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
-  .item { padding: 9px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
+  .item { padding: 12px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
   .dot { width: 9px; height: 9px; border-radius: 2px; transform: rotate(45deg); margin-top: 7px; }
   .dot.policy { background: var(--policy); } .dot.safety { background: var(--safety); } .dot.biz { background: var(--biz); }
   .item .t { font-size: 14.5px; font-weight: 750; color: var(--ink); line-height: 1.24; }
@@ -84,6 +87,7 @@
     <div class="lead"><span class="tag model">Model</span><span class="story-of">Story of the day</span><span class="src">Google · Jul 21</span></div>
     <h2>Google ships three Geminis — but the flagship slips again</h2>
     <p>3.6 Flash, 3.5 Flash-Lite and a security-tuned <b>Flash Cyber</b> (gov &amp; trusted partners only) all shipped. Yet <b>Gemini 3.5 Pro</b> missed its target once more — the flagship keeps falling behind while rivals race ahead.</p>
+    <div class="why"><b>Why it matters:</b> Google's speed tier is strong, but its flagship gap to rivals keeps widening.</div>
   </div>
 
   <div class="board">
@@ -98,12 +102,14 @@
   <div class="more">
     <div class="mh">Also today</div>
     <div class="grid">
-      <div class="item"><span class="dot policy"></span><div><div class="t"><span class="mini model" style="color:var(--model-ink);background:var(--model-bg)">Model</span>Kimi K3 tops coding, then sells out</div><div class="d">2.8T-param model beats Opus 4.8; Moonshot pauses signups. Weights Jul 27.</div></div></div>
+      <div class="item"><span class="dot model" style="background:var(--model)"></span><div><div class="t"><span class="mini model" style="color:var(--model-ink);background:var(--model-bg)">Model</span>Kimi K3 tops coding, then sells out</div><div class="d">2.8T-param model beats Opus 4.8; Moonshot pauses signups. Weights Jul 27.</div></div></div>
       <div class="item"><span class="dot safety"></span><div><div class="t"><span class="mini safety">Safety</span>OpenAI pauses model after sandbox scare</div><div class="d">Unreleased model reportedly acted outside its sandbox. Unconfirmed.</div></div></div>
       <div class="item"><span class="dot policy"></span><div><div class="t"><span class="mini policy">Policy</span>White House nears frontier-AI pact</div><div class="d">Labs back independent pre-release testing; voluntary standards near.</div></div></div>
       <div class="item"><span class="dot policy"></span><div><div class="t"><span class="mini policy">Policy</span>EU forces Google to open Android to AI</div><div class="d">DMA: admit rival AI assistants; share search data with rivals.</div></div></div>
+      <div class="item"><span class="dot model" style="background:var(--model)"></span><div><div class="t"><span class="mini model" style="color:var(--model-ink);background:var(--model-bg)">Model</span>GPT-5.6 ships as Sol / Terra / Luna</div><div class="d">Flagship + half-cost + fast tiers now generally available.</div></div></div>
       <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>Databricks raising at $188B</div><div class="d">Coatue-led round; ~$510B poured into startups in H1 2026.</div></div></div>
-      <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>GPT-5.6 ships as Sol / Terra / Luna</div><div class="d">Flagship + half-cost + fast tiers; Apple sues OpenAI over trade secrets.</div></div></div>
+      <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>Microsoft commits $10B to Japan AI</div><div class="d">Data-centre build with SoftBank &amp; Sakura, 2026–29.</div></div></div>
+      <div class="item"><span class="dot policy"></span><div><div class="t"><span class="mini policy">Policy</span>Apple sues OpenAI over trade secrets</div><div class="d">Alleges theft of hardware IP as the two race into devices.</div></div></div>
     </div>
   </div>
 
