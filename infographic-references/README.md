@@ -9,8 +9,8 @@ When asked to "make an infographic," Claude should:
 1. Pick the layout below that best fits the content shape (list, comparison, steps, tree, layers, etc.).
 2. Open the referenced example image(s) with the Read tool to match the visual style.
 3. Build a single self-contained HTML file (inline CSS, no external assets) sized for
-   social sharing — typically a portrait canvas around **800–1080px wide**, `4:5` or
-   `1:1.25` aspect ratio, so it exports cleanly as an image.
+   social sharing — a portrait canvas of **1080 × 1350 pixels** (`4:5` aspect ratio),
+   so it exports cleanly as an image.
 
 ## Style catalog
 
