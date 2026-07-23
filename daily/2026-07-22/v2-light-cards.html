@@ -16,41 +16,45 @@
 
   .header { background: linear-gradient(120deg,var(--brand),var(--brand2)); color: #fff; padding: 34px 46px 30px; }
   .eyebrow { display: flex; justify-content: space-between; align-items: center;
-    font-size: 14px; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; opacity: .92; }
-  h1 { font-size: 56px; font-weight: 850; line-height: 1.0; letter-spacing: -1.2px; margin-top: 14px; }
-  .sub { font-size: 18px; margin-top: 11px; font-weight: 500; opacity: .92; }
+    font-size: 16px; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; opacity: .92; }
+  h1 { font-size: 64.5px; font-weight: 850; line-height: 1.0; letter-spacing: -1.2px; margin-top: 14px; }
+  .sub { font-size: 20.5px; margin-top: 11px; font-weight: 500; opacity: .92; }
+  .kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-top: 20px; }
+  .kpi { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; padding: 11px 14px; }
+  .kpi .v { font-size: 23px; font-weight: 850; color: #fff; letter-spacing: -.5px; }
+  .kpi .l { font-size: 12.5px; color: rgba(255,255,255,.82); margin-top: 2px; font-weight: 600; }
 
-  .grid { padding: 26px 32px 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; flex: 1; align-content: stretch; }
+  .grid { padding: 26px 32px 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; flex: 1; align-content: space-between; }
   .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; border-top: 4px solid var(--line);
     box-shadow: 0 3px 14px rgba(15,23,42,.05); display: flex; flex-direction: column; }
   .card.model { border-top-color: var(--model); } .card.policy { border-top-color: var(--policy); }
   .card.safety { border-top-color: var(--safety); } .card.biz { border-top-color: var(--biz); }
-  .card .content { margin-top: 12px; }
-  .card .foot { margin-top: auto; padding-top: 13px; border-top: 1px dashed var(--line);
-    font-size: 13.5px; color: var(--muted); line-height: 1.36; }
+  .card .content { margin: 10px 0 14px; }
+  .card .foot { padding-top: 13px; border-top: 1px dashed var(--line);
+    font-size: 15.5px; color: var(--muted); line-height: 1.36; }
   .card .foot b { color: #334155; font-weight: 800; }
   .card .top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-  .pill { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+  .pill { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
     padding: 4px 11px; border-radius: 999px; border: 1px solid; }
   .pill.model { color: var(--model); background: var(--model-bg); border-color: var(--model-ln); }
   .pill.policy { color: var(--policy); background: var(--policy-bg); border-color: var(--policy-ln); }
   .pill.safety { color: var(--safety); background: var(--safety-bg); border-color: var(--safety-ln); }
   .pill.biz { color: var(--biz); background: var(--biz-bg); border-color: var(--biz-ln); }
-  .card .src { font-size: 12px; color: var(--muted); font-weight: 700; }
-  .card h2 { font-size: 21px; font-weight: 800; color: var(--ink); line-height: 1.2; letter-spacing: -.3px; }
-  .card p { font-size: 15px; color: #475569; line-height: 1.45; margin-top: 10px; }
+  .card .src { font-size: 14px; color: var(--muted); font-weight: 700; }
+  .card h2 { font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1.2; letter-spacing: -.3px; }
+  .card p { font-size: 17.5px; color: #475569; line-height: 1.45; margin-top: 10px; }
   .card p b { color: var(--ink); font-weight: 700; }
 
-  .board { margin: 6px 32px 0; background: var(--ink); color: #fff; border-radius: 16px; padding: 16px 24px;
+  .board { margin: 6px 32px 0; background: var(--ink); color: #fff; border-radius: 16px; padding: 22px 24px;
     display: grid; grid-template-columns: auto repeat(3,1fr); align-items: center; gap: 18px; }
-  .board .bt { font-size: 13px; font-weight: 800; line-height: 1.15; letter-spacing: .5px; }
-  .board .bt span { color: #a5b4fc; display: block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
-  .lb .l { font-size: 11px; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
-  .lb .v { font-size: 16.5px; color: #fff; font-weight: 800; margin-top: 2px; letter-spacing: -.2px; }
-  .lb .n { font-size: 12px; color: #6ee7b7; font-weight: 700; margin-top: 1px; }
+  .board .bt { font-size: 15px; font-weight: 800; line-height: 1.15; letter-spacing: .5px; }
+  .board .bt span { color: #a5b4fc; display: block; font-size: 12.5px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+  .lb .l { font-size: 12.5px; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+  .lb .v { font-size: 19px; color: #fff; font-weight: 800; margin-top: 2px; letter-spacing: -.2px; }
+  .lb .n { font-size: 14px; color: #6ee7b7; font-weight: 700; margin-top: 1px; }
 
   .footer { margin-top: auto; padding: 16px 46px; display: flex; justify-content: space-between; align-items: center;
-    font-size: 12.5px; color: var(--muted); font-weight: 600; }
+    font-size: 14.5px; color: var(--muted); font-weight: 600; }
   .footer .b { color: var(--brand); font-weight: 800; letter-spacing: .5px; }
 </style>
 <div class="canvas">
@@ -58,6 +62,12 @@
     <div class="eyebrow"><span>AI Daily</span><span>Wednesday · Jul 22, 2026</span></div>
     <h1>6 stories moving AI today</h1>
     <div class="sub">Model launches, policy shifts and the money behind them.</div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">3</div><div class="l">New Geminis</div></div>
+      <div class="kpi"><div class="v">2.8T</div><div class="l">Kimi K3 params</div></div>
+      <div class="kpi"><div class="v">95.0%</div><div class="l">Top SWE-bench</div></div>
+      <div class="kpi"><div class="v">$188B</div><div class="l">Databricks val.</div></div>
+    </div>
   </div>
 
   <div class="grid">

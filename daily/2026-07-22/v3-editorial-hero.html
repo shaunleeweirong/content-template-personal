@@ -12,61 +12,65 @@
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     background: #7b8496; display: flex; justify-content: center; padding: 24px; -webkit-font-smoothing: antialiased; }
   .canvas { width: 1080px; height: 1350px; background: var(--paper);
-    position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+    position: relative; overflow: hidden; display: flex; flex-direction: column; }
 
   .header { background: linear-gradient(160deg,var(--navy),var(--navy2)); color: #fff; padding: 30px 44px 26px; }
   .eyebrow { display: flex; justify-content: space-between; align-items: center;
-    font-size: 15px; letter-spacing: 1.5px; font-weight: 700; text-transform: uppercase; }
+    font-size: 17.5px; letter-spacing: 1.5px; font-weight: 700; text-transform: uppercase; }
   .eyebrow .k { color: #93c5fd; }
   .eyebrow .d { color: #94a3b8; font-weight: 600; }
-  h1 { font-size: 52px; font-weight: 800; line-height: 1.04; margin-top: 14px; letter-spacing: -1px; }
+  h1 { font-size: 60px; font-weight: 800; line-height: 1.04; margin-top: 14px; letter-spacing: -1px; }
   h1 .hi { color: var(--gold); }
-  .sub { font-size: 18px; color: #cbd5e1; margin-top: 10px; font-weight: 500; }
+  .sub { font-size: 20.5px; color: #cbd5e1; margin-top: 10px; font-weight: 500; }
   .kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 20px; }
   .kpi { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 11px 14px; }
-  .kpi .v { font-size: 23px; font-weight: 800; color: #fff; letter-spacing: -.5px; }
+  .kpi .v { font-size: 26.5px; font-weight: 800; color: #fff; letter-spacing: -.5px; }
   .kpi .v.g { color: #4ade80; } .kpi .v.gold { color: var(--gold); }
-  .kpi .l { font-size: 12px; color: #9fb0c9; margin-top: 3px; font-weight: 600; }
+  .kpi .l { font-size: 14px; color: #9fb0c9; margin-top: 3px; font-weight: 600; }
 
   /* Hero */
   .hero { margin: 0 44px; background: #fff; border: 1.5px solid var(--line); border-left: 6px solid var(--model);
     border-radius: 14px; padding: 18px 22px; }
   .hero .lead { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-  .tag { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; }
+  .tag { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; }
   .tag.model { color: var(--model-ink); background: var(--model-bg); border: 1px solid var(--model-ln); }
-  .lead .story-of { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
-  .lead .src { margin-left: auto; font-size: 12.5px; color: var(--muted); font-weight: 700; }
-  .hero h2 { font-size: 30px; font-weight: 850; color: var(--ink); line-height: 1.1; letter-spacing: -.6px; }
-  .hero p { font-size: 15.5px; color: #334155; line-height: 1.44; margin-top: 8px; }
+  .lead .story-of { font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .lead .src { margin-left: auto; font-size: 14.5px; color: var(--muted); font-weight: 700; }
+  .hero h2 { font-size: 34.5px; font-weight: 850; color: var(--ink); line-height: 1.1; letter-spacing: -.6px; }
+  .hero p { font-size: 18px; color: #334155; line-height: 1.44; margin-top: 8px; }
   .hero p b { color: var(--ink); }
-  .hero .why { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line);
-    font-size: 14.5px; color: var(--muted); font-weight: 600; }
+  .hero .trio { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 14px; }
+  .hero .trio .chip { background: var(--model-bg); border: 1px solid var(--model-ln); border-radius: 10px; padding: 11px 13px; }
+  .hero .trio .chip b { display: block; font-size: 15.5px; color: var(--model-ink); font-weight: 800; }
+  .hero .trio .chip span { font-size: 13px; color: var(--muted); }
+  .hero .why { margin-top: 14px; padding-top: 13px; border-top: 1px dashed var(--line);
+    font-size: 16.5px; color: var(--muted); font-weight: 600; }
   .hero .why b { color: var(--model-ink); font-weight: 800; }
 
   /* Leaderboard */
-  .board { margin: 0 44px; }
-  .board .bh { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .board { margin: 22px 44px 0; }
+  .board .bh { font-size: 15px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
   .board .row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
   .lb { border: 1.5px solid var(--line); border-radius: 12px; padding: 17px 18px; background: #fff; }
-  .lb .l { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
-  .lb .v { font-size: 20px; font-weight: 850; color: var(--ink); margin-top: 2px; letter-spacing: -.4px; }
-  .lb .n { font-size: 12.5px; color: var(--model); font-weight: 800; margin-top: 1px; }
+  .lb .l { font-size: 14px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .lb .v { font-size: 23px; font-weight: 850; color: var(--ink); margin-top: 2px; letter-spacing: -.4px; }
+  .lb .n { font-size: 14.5px; color: var(--model); font-weight: 800; margin-top: 1px; }
   .lb.mid { border-color: var(--model-ln); background: var(--model-bg); }
 
   /* Secondary stories */
-  .more { margin: 0 44px; }
-  .more .mh { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-  .more .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
-  .item { padding: 12px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
+  .more { margin: 22px 44px 18px; flex: 1; display: flex; flex-direction: column; }
+  .more .mh { font-size: 15px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .more .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; flex: 1; align-content: space-between; }
+  .item { padding: 17px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
   .dot { width: 9px; height: 9px; border-radius: 2px; transform: rotate(45deg); margin-top: 7px; }
   .dot.policy { background: var(--policy); } .dot.safety { background: var(--safety); } .dot.biz { background: var(--biz); }
-  .item .t { font-size: 14.5px; font-weight: 750; color: var(--ink); line-height: 1.24; }
-  .item .t .mini { display: inline-block; font-size: 9.5px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase;
+  .item .t { font-size: 16.5px; font-weight: 750; color: var(--ink); line-height: 1.24; }
+  .item .t .mini { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase;
     padding: 1px 6px; border-radius: 5px; margin-right: 6px; vertical-align: 1.5px; }
   .mini.policy { color: var(--policy-ink); background: var(--policy-bg); } .mini.safety { color: var(--safety-ink); background: var(--safety-bg); } .mini.biz { color: var(--biz-ink); background: var(--biz-bg); }
-  .item .d { font-size: 13px; color: #475569; line-height: 1.34; margin-top: 3px; }
+  .item .d { font-size: 15px; color: #475569; line-height: 1.34; margin-top: 3px; }
 
-  .footer { background: var(--navy); color: #94a3b8; font-size: 12.5px; font-weight: 600;
+  .footer { background: var(--navy); color: #94a3b8; font-size: 14.5px; font-weight: 600;
     padding: 13px 44px; display: flex; justify-content: space-between; align-items: center; letter-spacing: .3px; }
   .footer .s { color: #cbd5e1; }
 </style>
@@ -86,7 +90,12 @@
   <div class="hero">
     <div class="lead"><span class="tag model">Model</span><span class="story-of">Story of the day</span><span class="src">Google · Jul 21</span></div>
     <h2>Google ships three Geminis — but the flagship slips again</h2>
-    <p>3.6 Flash, 3.5 Flash-Lite and a security-tuned <b>Flash Cyber</b> (gov &amp; trusted partners only) all shipped. Yet <b>Gemini 3.5 Pro</b> missed its target once more — the flagship keeps falling behind while rivals race ahead.</p>
+    <p>All three shipped today — yet <b>Gemini 3.5 Pro</b> missed its target once more, so the flagship keeps falling behind while rivals race ahead.</p>
+    <div class="trio">
+      <div class="chip"><b>3.6 Flash</b><span>faster flagship-lite</span></div>
+      <div class="chip"><b>3.5 Flash-Lite</b><span>cost-optimised tier</span></div>
+      <div class="chip"><b>3.5 Flash Cyber</b><span>security-tuned, gated</span></div>
+    </div>
     <div class="why"><b>Why it matters:</b> Google's speed tier is strong, but its flagship gap to rivals keeps widening.</div>
   </div>
 
@@ -110,6 +119,8 @@
       <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>Databricks raising at $188B</div><div class="d">Coatue-led round; ~$510B poured into startups in H1 2026.</div></div></div>
       <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>Microsoft commits $10B to Japan AI</div><div class="d">Data-centre build with SoftBank &amp; Sakura, 2026–29.</div></div></div>
       <div class="item"><span class="dot policy"></span><div><div class="t"><span class="mini policy">Policy</span>Apple sues OpenAI over trade secrets</div><div class="d">Alleges theft of hardware IP as the two race into devices.</div></div></div>
+      <div class="item"><span class="dot model" style="background:var(--model)"></span><div><div class="t"><span class="mini model" style="color:var(--model-ink);background:var(--model-bg)">Model</span>Anthropic launches Sonnet 5</div><div class="d">Near-Opus 4.8 quality at intro $2/$10 per-M through Aug 31.</div></div></div>
+      <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>Agent tools go mainstream</div><div class="d">Claude Cowork + ChatGPT Work run long tasks while you're offline.</div></div></div>
     </div>
   </div>
 
