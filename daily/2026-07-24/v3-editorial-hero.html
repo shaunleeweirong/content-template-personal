@@ -1,0 +1,132 @@
+<title>AI Frontier Report — July 22, 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --navy: #0b1220; --navy2: #131c30; --ink: #0f172a; --paper: #f4f6fb;
+    --gold: #f5b301; --muted: #64748b; --line: #e2e8f0;
+    --model: #16a34a; --model-bg: #ecfdf3; --model-ln: #bbf7d0; --model-ink: #14532d;
+    --policy: #d97706; --policy-bg: #fffbeb; --policy-ln: #fde68a; --policy-ink: #7c2d12;
+    --safety: #dc2626; --safety-bg: #fef2f2; --safety-ln: #fecaca; --safety-ink: #7f1d1d;
+    --biz: #2563eb; --biz-bg: #eff6ff; --biz-ln: #bfdbfe; --biz-ink: #1e3a8a;
+    --product: #4f46e5; --product-bg: #eef2ff; --product-ln: #c7d2fe; --product-ink: #3730a3;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #7b8496; display: flex; justify-content: center; padding: 24px; -webkit-font-smoothing: antialiased; }
+  .canvas { width: 1080px; height: 1350px; background: var(--paper);
+    position: relative; overflow: hidden; display: flex; flex-direction: column; }
+
+  .header { background: linear-gradient(160deg,var(--navy),var(--navy2)); color: #fff; padding: 30px 44px 26px; }
+  .eyebrow { display: flex; justify-content: space-between; align-items: center;
+    font-size: 17.5px; letter-spacing: 1.5px; font-weight: 700; text-transform: uppercase; }
+  .eyebrow .k { color: #93c5fd; }
+  .eyebrow .d { color: #94a3b8; font-weight: 600; }
+  h1 { font-size: 60px; font-weight: 800; line-height: 1.04; margin-top: 14px; letter-spacing: -1px; }
+  h1 .hi { color: var(--gold); }
+  .sub { font-size: 20.5px; color: #cbd5e1; margin-top: 10px; font-weight: 500; }
+  .kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 20px; }
+  .kpi { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 11px 14px; }
+  .kpi .v { font-size: 26.5px; font-weight: 800; color: #fff; letter-spacing: -.5px; }
+  .kpi .v.g { color: #4ade80; } .kpi .v.gold { color: var(--gold); }
+  .kpi .l { font-size: 14px; color: #9fb0c9; margin-top: 3px; font-weight: 600; }
+
+  /* Hero */
+  .hero { margin: 0 44px; background: #fff; border: 1.5px solid var(--line); border-left: 6px solid var(--model);
+    border-radius: 14px; padding: 18px 22px; }
+  .hero .lead { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .tag { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; }
+  .tag.model { color: var(--model-ink); background: var(--model-bg); border: 1px solid var(--model-ln); }
+  .lead .story-of { font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .lead .src { margin-left: auto; font-size: 14.5px; color: var(--muted); font-weight: 700; }
+  .hero h2 { font-size: 34.5px; font-weight: 850; color: var(--ink); line-height: 1.1; letter-spacing: -.6px; }
+  .hero p { font-size: 18px; color: #334155; line-height: 1.44; margin-top: 8px; }
+  .hero p b { color: var(--ink); }
+  .hero .trio { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 14px; }
+  .hero .trio .chip { background: var(--model-bg); border: 1px solid var(--model-ln); border-radius: 10px; padding: 11px 13px; }
+  .hero .trio .chip b { display: block; font-size: 15.5px; color: var(--model-ink); font-weight: 800; }
+  .hero .trio .chip span { font-size: 13px; color: var(--muted); }
+  .hero .why { margin-top: 14px; padding-top: 13px; border-top: 1px dashed var(--line);
+    font-size: 16.5px; color: var(--muted); font-weight: 600; }
+  .hero .why b { color: var(--model-ink); font-weight: 800; }
+
+  /* Leaderboard */
+  .board { margin: 22px 44px 0; }
+  .board .bh { font-size: 15px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .board .row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .lb { border: 1.5px solid var(--line); border-radius: 12px; padding: 17px 18px; background: #fff; }
+  .lb .l { font-size: 14px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .lb .v { font-size: 23px; font-weight: 850; color: var(--ink); margin-top: 2px; letter-spacing: -.4px; }
+  .lb .n { font-size: 14.5px; color: var(--model); font-weight: 800; margin-top: 1px; }
+  .lb.mid { border-color: var(--model-ln); background: var(--model-bg); }
+
+  /* Secondary stories */
+  .more { margin: 22px 44px 18px; flex: 1; display: flex; flex-direction: column; }
+  .more .mh { font-size: 15px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .more .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; flex: 1; align-content: space-between; }
+  .item { padding: 24px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
+  .dot { width: 9px; height: 9px; border-radius: 2px; transform: rotate(45deg); margin-top: 7px; }
+  .dot.policy { background: var(--policy); } .dot.safety { background: var(--safety); } .dot.biz { background: var(--biz); } .dot.product { background: var(--product); }
+  .item .t { font-size: 16.5px; font-weight: 750; color: var(--ink); line-height: 1.24; }
+  .item .t .mini { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase;
+    padding: 1px 6px; border-radius: 5px; margin-right: 6px; vertical-align: 1.5px; }
+  .mini.policy { color: var(--policy-ink); background: var(--policy-bg); } .mini.safety { color: var(--safety-ink); background: var(--safety-bg); } .mini.biz { color: var(--biz-ink); background: var(--biz-bg); } .mini.product { color: var(--product-ink); background: var(--product-bg); }
+  .item .d { font-size: 15px; color: #475569; line-height: 1.34; margin-top: 3px; }
+
+  .footer { background: var(--navy); color: #94a3b8; font-size: 14.5px; font-weight: 600;
+    padding: 13px 44px; display: flex; justify-content: space-between; align-items: center; letter-spacing: .3px; }
+  .footer .s { color: #cbd5e1; }
+</style>
+<div class="canvas">
+  <div class="header">
+    <div class="eyebrow"><span>AI Frontier Report · <span class="k">DAILY</span></span><span class="d">Fri · Jul 24, 2026</span></div>
+    <h1>The AI frontier, <span class="hi">in one page.</span></h1>
+    <div class="sub">Today's models, policy and money — ranked and fact-tagged.</div>
+    <div class="kpis">
+      <div class="kpi"><div class="v gold">V4</div><div class="l">DeepSeek open SOTA</div></div>
+      <div class="kpi"><div class="v">$7.4B</div><div class="l">DeepSeek raise</div></div>
+      <div class="kpi"><div class="v g">95.0%</div><div class="l">Top SWE-bench</div></div>
+      <div class="kpi"><div class="v">$205B</div><div class="l">Alphabet '26 capex</div></div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="lead"><span class="tag model">Model</span><span class="story-of">Story of the day</span><span class="src">DeepSeek · Jul 24</span></div>
+    <h2>DeepSeek V4 ships — open source's new high-water mark</h2>
+    <p>The agent-focused model lands as a new <b>open-source state of the art</b>, capping the largest concentration of open-weight releases the industry has seen.</p>
+    <div class="trio">
+      <div class="chip"><b>DeepSeek V4</b><span>open SOTA · today</span></div>
+      <div class="chip"><b>Kimi K3</b><span>weights free Jul 27</span></div>
+      <div class="chip"><b>GLM-5.2 · Qwen3.6</b><span>open, close behind</span></div>
+    </div>
+    <div class="why"><b>Why it matters:</b> open weights are closing the gap and undercutting closed labs on price.</div>
+  </div>
+
+  <div class="board">
+    <div class="bh">Who leads each benchmark · Jul 2026</div>
+    <div class="row">
+      <div class="lb mid"><div class="l">Coding</div><div class="v">Claude Fable 5</div><div class="n">SWE-bench 95.0%</div></div>
+      <div class="lb"><div class="l">Science</div><div class="v">Gemini 3.1 Pro</div><div class="n">GPQA 94.3%</div></div>
+      <div class="lb"><div class="l">Computer use</div><div class="v">GPT-5.4</div><div class="n">category leader</div></div>
+    </div>
+  </div>
+
+  <div class="more">
+    <div class="mh">Also today</div>
+    <div class="grid">
+      <div class="item"><span class="dot policy"></span><div><div class="t"><span class="mini policy">Policy</span>US delays GPT-5.6's full public launch</div><div class="d">Washington asked for early access + oversight before the full rollout.</div></div></div>
+      <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>DeepSeek raises $7.4B at $50B+</div><div class="d">Largest private AI round in China; a 2027 IPO is on the table.</div></div></div>
+      <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>Alphabet lifts 2026 capex to ~$205B</div><div class="d">Google Cloud +82% in Q2; demand keeps outpacing spend.</div></div></div>
+      <div class="item"><span class="dot product"></span><div><div class="t"><span class="mini product">Product</span>Enterprise AI agents start billing</div><div class="d">OpenAI moves to credit billing; ChatGPT Work ends its free preview.</div></div></div>
+      <div class="item"><span class="dot biz"></span><div><div class="t"><span class="mini biz">Business</span>SAP acquires Prior Labs</div><div class="d">€1B+ over four years to build a European frontier AI lab.</div></div></div>
+      <div class="item"><span class="dot model" style="background:var(--model)"></span><div><div class="t"><span class="mini model" style="color:var(--model-ink);background:var(--model-bg)">Model</span>Kimi K3 open weights go free Jul 27</div><div class="d">2.8T-param open model caps the biggest open-weight week yet.</div></div></div>
+      <div class="item"><span class="dot policy"></span><div><div class="t"><span class="mini policy">Policy</span>EU delays its high-risk AI Act</div><div class="d">Pushed to Dec 2027 via the Digital Omnibus package.</div></div></div>
+      <div class="item"><span class="dot model" style="background:var(--model)"></span><div><div class="t"><span class="mini model" style="color:var(--model-ink);background:var(--model-bg)">Model</span>Anthropic ships Sonnet 5</div><div class="d">Near-Opus 4.8 quality at intro $2/$10 per-M.</div></div></div>
+      <div class="item"><span class="dot model" style="background:var(--model)"></span><div><div class="t"><span class="mini model" style="color:var(--model-ink);background:var(--model-bg)">Model</span>GPT-5.6 family: Luna / Terra / Sol</div><div class="d">~$1–$5 per-M input with a 1M-token context window.</div></div></div>
+      <div class="item"><span class="dot product"></span><div><div class="t"><span class="mini product">Product</span>Gemini Enterprise enforces agent identity</div><div class="d">Cryptographic agent IDs for enterprise governance.</div></div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="s">AI Frontier Report — automated daily infographic</span>
+    <span>Compiled from AI-news trackers · verify before high-stakes use</span>
+  </div>
+</div>
